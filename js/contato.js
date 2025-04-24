@@ -1,9 +1,9 @@
 'use strict'
 
-const nome = 'Nicolas'
+const nome = 'cachorrada'
 
 
-async function getContatos(){
+export async function getContatos(){
     const url = 'https://bakcend-fecaf-render.onrender.com/contatos'
 
     const response = await fetch(url) // (aguarda) faz uma requisição pra url
@@ -69,12 +69,12 @@ async function deleteContato(id){
 }
 
 const novoContato = {
-    "nome": "Silva Nicolas",
+    "nome": "Cachaça Imunda",
     "celular": "11 944810533",
-    "foto": "../img/nicolas.png",
-    "email": "nicolas@gmail.com",
-    "endereco": "Rua Laura, 40", 
-    "cidade": "Barueri"
+    "foto": "../img/vete.jfif",
+    "email": "gozo@gmail.com",
+    "endereco": "Rua Nigga 40", 
+    "cidade": "Jandira"
 }
 
 
