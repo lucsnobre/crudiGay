@@ -1,93 +1,67 @@
 'use strict'
 
-const nome = 'cachorrada'
-
-
 export async function getContatos(){
-    const url = 'https://bakcend-fecaf-render.onrender.com/contatos'
-
-    const response = await fetch(url) // (aguarda) faz uma requisição pra url
-
-    const data = await response.json() // espera o response executar o json com os dados
-
-    console.log('winter came by my bedroom today')
-
-    return data 
-}
-
-export async function getContatoPorNome(nome){
-    const url = `https://bakcend-fecaf-render.onrender.com/contatos?nome_like=${nome}`
-
+    const url = "https://bakcend-fecaf-render.onrender.com/contatos"
     const response = await fetch(url)
-
     const data = await response.json()
 
     return data
 }
 
-async function getContato(id){
-    const url = `https://bakcend-fecaf-render.onrender.com/contatos/${id}`
-
+export async function getContatosPorNome(nome){
+    const url = `https://bakcend-fecaf-render.onrender.com/contatos?nome_like=^${nome}`
     const response = await fetch(url)
-
     const data = await response.json()
-
-    console.log('falling in rows and covering the lane')
 
     return data
 }
 
-async function postContato(contato){ // tem a função d comunicar-se com o servidor
-    const url = `https://bakcend-fecaf-render.onrender.com/contatos`
-    const options = { // http só aceita string
+
+export async function postContatos(contato){
+    const url = "https://bakcend-fecaf-render.onrender.com/contatos"
+    const options = {
         method: 'POST',
         headers: {
-            'Content-Type': 'application/json'
+            'Content-Type' : 'application/json'
         },
         body: JSON.stringify(contato)
     }
-
-    const response = await fetch(url, options)
-
-    return response.ok // ou status (q retorna o status_code)
-}
-
-async function putContato(id, contato){
-    const url = `https://bakcend-fecaf-render.onrender.com/contatos/${id}`
-    const options = { // http só aceita string
-        method: 'PUT',
-        headers: {
-            'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(contato)
-    }
-
-    const response = await fetch(url, options)
-
-    return response.ok // ou status (q retorna o status_code)
-}
-
-async function deleteContato(id){
-    const url = `https://bakcend-fecaf-render.onrender.com/contatos/${id}`
-    const options = {
-        method: 'DELETE'
-    }
-
     const response = await fetch(url, options)
 
     return response.ok
 }
 
-const novoContato = {
-    "nome": "Cachaça Imunda",
-    "celular": "11 944810533",
-    "foto": "../img/vete.jfif",
-    "email": "gozo@gmail.com",
-    "endereco": "Rua Nigga 40", 
-    "cidade": "Jandira"
+async function putContatos(contato, id) {
+    const url = `https://bakcend-fecaf-render.onrender.com/contatos/${id}`
+    const options = {
+        method: 'PUT',
+        headers: {
+            'Content-Type' : 'application/json'
+        },
+        body: JSON.stringify(contato)
+    }
+    const response = await fetch(url, options)
+
+    return response.ok
 }
 
+async function deleteContatos(id) {
+    const url = `https://bakcend-fecaf-render.onrender.com/contatos/${id}`
+    const options = {
+        method: 'DELETE',
+        headers: {
+            'Content-Type' : 'application/json'
+        }
+    }
+    const response = await fetch(url, options)
 
-// function mensagem () {
-//     alert('Oi!')
-// }
+    return response.ok
+}
+
+const contato = {
+    "nome": "cachorrada",
+    "celular": "11 9 9999-9999",
+    "foto": "../img/vete.png",
+    "email": "dd@gmail.com",
+    "endereco": "SENAI, 123",
+}
