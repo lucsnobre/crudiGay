@@ -2,7 +2,7 @@ console.log('Script carregado!');
 
 'use strict'
 
-import{ getContatos } from "./contato.js"
+import{ getContatoPorNome, getContatos } from "./contato.js"
 
 function criarCard(contato){
     const container = document.getElementById('container')
@@ -22,4 +22,17 @@ async function exibirContatos(){
     contatos.forEach(criarCard)
 }
 
+async function exibirPesquisa(evento){
+    if (evento.key == 'Enter') {
+        const contatos = await getContatoPorNome(evento.target.value)
+        document.getElementById('container').replaceChildren()
+        contatos.forEach(criarCard)
+    }
+    
+
+}
+
 exibirContatos()
+
+document.getElementById('pesquisa')
+        .addEventListener('keydown', exibirPesquisa)
