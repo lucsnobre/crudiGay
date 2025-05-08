@@ -76,6 +76,8 @@ form {
     background-color: lightblue;
     width: 80%;
     margin: auto;
+    justify-content: center;
+    flex-wrap: wrap;
     display: flex;
     gap: 32px;
     padding: 32px;
@@ -99,6 +101,22 @@ form {
 
 .input-container{
     width: 50%;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.input {
+    display: flex;
+    flex-direction: column;
+}
+
+.input-text{
+    height: 32px;
+    border: 1px solid red;
+    border-radius: 2px;
+    outline: none;
+    padding-left: 16px;
 }
 
 .preview-label{
