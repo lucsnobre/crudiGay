@@ -34,7 +34,7 @@ header input {
     border-radius: 4px;
     padding: 0 12px;
 }
-header button{
+.button{
     height: 48px;
     background-color: red;
     color: white;
@@ -48,8 +48,12 @@ main{
     padding-top: 32px;
 }
 
+main.card-show form{
+    display: flex;
+}
+
 .container{
-    display: none;
+    display: flex;
     flex-wrap: wrap;
     gap: 32px;
 }
@@ -83,12 +87,18 @@ form {
     padding: 32px;
 }
 
+main.form-show form{
+    display: flex;
+}
+
 .preview-input{
     display: none;
 }
 
 .button-container{
     width: 100%;
+    display: flex;
+    justify-content: space-evenly;
 }
 
 .preview{

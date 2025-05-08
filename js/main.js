@@ -32,7 +32,21 @@ async function exibirPesquisa(evento){
 
 }
 
+function cadastrarContato (){
+    document.querySelector('main').className = 'form-show'
+}
+
+function voltarHome(){
+    document.querySelector('main').className = 'card-show'
+}
+
 exibirContatos()
 
 document.getElementById('pesquisa')
         .addEventListener('keydown', exibirPesquisa)
+
+document.getElementById('novo-contato')
+.addEventListener('click', cadastrarContato)
+
+document.getElementById('cancelar')
+addEventListener('click', voltarHome)
